@@ -90,7 +90,7 @@ pech=random.choice(l)
 
 @bot.message_handler(content_types=['text', 'document', 'audio'])
 def messages1(message):
-	if "!погода" in message.text:
+	if "/погода" in message.text:
 		observation = owm.weather_at_place("Ахтубинск")
 		w = observation.get_weather()
 		humidity = w.get_humidity()
@@ -98,10 +98,10 @@ def messages1(message):
 		otvet = "Погода в городе " + city + "\n Температура - " + str(temp) + "\n Влажность - " + str(humidity) + "%" 
 		bot.reply_to(message, otvet)
 	
-	if "!help" in message.text:
+	if "/help" in message.text:
 		bot.reply_to(message, "!печенье - Отправит вам печенье с предсказанием \n !погода - Отправит вам температуру и влажность в городе Ахтубинск")
 
-	if "!печенье" in message.text:
+	if "/печенье" in message.text:
 		bot.reply_to(message, pech)
 
 	
