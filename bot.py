@@ -3,8 +3,7 @@ import pyowm
 import time
 import random
 import secrets
-from telebot import apihelper
-apihelper.proxy = {'https': 'https://141.125.82.106:80'}
+
 a=1
 city="Ахтубинск"
 
